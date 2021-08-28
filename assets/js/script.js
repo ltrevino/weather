@@ -16,7 +16,9 @@ const getData = function(city) {
             const lon = data.coord['lon'];
             const lat = data.coord['lat'];
             getForecast(city, lon, lat);
-            document.querySelector('.city-list').remove();
+            if (document.querySelector('.city-list')) {
+                document.querySelector('.city-list').remove();
+            }
             saveCity(city);
             start();
         });
